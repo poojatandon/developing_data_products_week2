@@ -1,0 +1,29 @@
+---
+title: "My First Leaflet Map"
+author: "Pooja"
+date: "5 Feb 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## My First Leaflet Map
+
+Let’s create a map that shows the Taj Mahal in Agra, India.
+
+Load library Leaflet.
+```{r}
+library(leaflet)
+
+```
+
+A link to the official site of Taj Mahal from where we could get relevant information.
+
+```{r}
+TajMahal <- c("<a href= 'https://www.tajmahal.gov.in/view_taj.html' >Taj Mahal</a>")
+leaflet() %>%
+addTiles() %>%
+addMarkers(lat=27.173891, lng=78.042068, popup = TajMahal)
+```
